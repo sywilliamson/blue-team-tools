@@ -45,3 +45,5 @@
     - `sudo chattr +i -r /usr/bin`
     - `sudo chattr +i -r /usr/local/bin`
     - `for file in /home/*/.ssh/authorized_keys; do sudo chattr +i "$file"; done`
+    - Implement DenyUsers in `/etc/ssh/sshd_config`. *(This keyword can be followed by a list of user name patterns, separated by spaces.  Login is disallowed for user names that match one of the patterns)*
+    
