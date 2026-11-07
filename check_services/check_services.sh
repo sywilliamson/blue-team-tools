@@ -174,6 +174,7 @@ done < <(
 # report findings
 if [[ ${#UNKNOWN_SERVICES[@]} -eq 0 ]]; then
     echo "All services whitelisted for $HOSTNAME."
+    echo ""
     exit 0
 else
     echo "Found ${#UNKNOWN_SERVICES[@]} non-whitelisted services:"
@@ -183,5 +184,6 @@ else
         echo "  $service"
         done
 
+    echo ""
     exit 1
 fi
