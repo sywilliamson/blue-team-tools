@@ -168,7 +168,7 @@ done < <(
         --state=enabled \
         --no-legend \
         --no-pager |
-    awk '{print $1}'
+    awk -F '.service' '{print $1}'
 )
 
 # report findings
