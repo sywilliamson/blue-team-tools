@@ -177,7 +177,7 @@ if [[ ${#UNKNOWN_SERVICES[@]} -eq 0 ]]; then
     echo ""
     exit 0
 else
-    echo "Found ${#UNKNOWN_SERVICES[@]} non-whitelisted services:"
+    echo "Found ${#UNKNOWN_SERVICES[@]} non-whitelisted service(s):"
     echo
 
     for service in "${UNKNOWN_SERVICES[@]}"; do

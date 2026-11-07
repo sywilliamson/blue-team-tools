@@ -105,7 +105,7 @@ case "$HOSTNAME" in
             dbus polkitd chrony avahi scrutineer
             techdirector crewchief firecrew jackcrew
             garagecrew celebrity pitlaner reserve gunners
-            whiteteam dd-agent ddagentuser
+            whiteteam dd-agent ddagentuser systemd-coredump
         )
         ;;
 
@@ -159,14 +159,16 @@ done < /etc/passwd
 # report findings
 if [[ ${#UNKNOWN_USERS[@]} -eq 0 ]]; then
     echo "All system users whitelisted for $HOSTNAME."
+    echo ""
     exit 0
 else
-    echo "Found ${#UNKNOWN_USERS[@]} non-whitelisted users:"
+    echo "Found ${#UNKNOWN_USERS[@]} non-whitelisted user(s):"
     echo
 
     for user in "${UNKNOWN_USERS[@]}"; do
         echo "  $user"
         done
 
+    echo ""
     exit 1
 fi
